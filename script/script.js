@@ -58,20 +58,20 @@ fetch('https://rickandmortyapi.com/api/episode/')
 .then(json => {
 const episode = json.results;
 const container = document.getElementById('Episode-container');
-  if (!container) {
-    console.error('Episode container not found');
-    return;
-  }
 
-episode.forEach(episode => {
+episode.forEach(async (episode) => {
     const episodeDiv = document.createElement('div');
     episodeDiv.className = 'episode';
+
+    const characterPromises = episode.characters.slice(0, 5).map(url => fetch(url).then(res => res.json()));
+    const characters = await Promise.all(characterPromises);
+    const characterNames = characters.map(char => char.name).join(' , ');
 
     episodeDiv.innerHTML = `
     <h2>${episode.name}</h2>
     <p>Episode: ${episode.episode}</p>
     <p>Air date: ${episode.air_date}</p>
-    <p>Characters: "PLACEHOLDER"</p>
+    <p>Characters: ${characterNames}</p>
   `;
   container.appendChild(episodeDiv);
 });
