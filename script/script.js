@@ -5,9 +5,13 @@ fetch('https://rickandmortyapi.com/api/character/')
   const container = document.getElementById('Characters-container');
   
 
-  characters.forEach(character => {
+  characters.forEach(async (character) => {
       const characterDiv = document.createElement('div');
       characterDiv.className = 'character';
+
+      const episodePromises = character.episode.map(url => fetch(url).then(res => res.json()));
+      const episodes = await Promise.all(episodePromises);
+      const episodesNames = episodes.map(episodes => episodes.name).join(' , ')
 
       characterDiv.innerHTML = `
       <h2>${character.name}</h2>
@@ -18,6 +22,7 @@ fetch('https://rickandmortyapi.com/api/character/')
       <p>Gender: ${character.gender}</p>
       <p>Origin: ${character.origin.name}</p>
       <p>Location: ${character.location.name}</p>
+      <p>Episodes: ${episodesNames}</p>
     `;
     container.appendChild(characterDiv);
   });
@@ -34,16 +39,20 @@ fetch('https://rickandmortyapi.com/api/location/')
   const container = document.getElementById('Location-container');
   
 
-  location.forEach(location => {
+  location.forEach(async (location) => {
       const locationDiv = document.createElement('div');
       locationDiv.className = 'location';
+
+      const residentsPromises = location.residents.slice(0, 5).map(url => fetch(url).then(res => res.json()));
+      const residents = await Promise.all(residentsPromises);
+      const residentsNames = residents.map(residents => residents.name).join(' , ');
 
       locationDiv.innerHTML = `
       <h2>${location.name}</h2>
       <p>location id: ${location.id}</p>
       <p>Type: ${location.type}</p>
       <p>Dimension: ${location.dimension}</p>
-      <p>Residents: "PLACEHOLDER"</p>
+      <p>Residents: ${residentsNames}</p>
     `;
     container.appendChild(locationDiv);
   });
