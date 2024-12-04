@@ -1,0 +1,39 @@
+#Location-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  padding-bottom: 20px;
+}
+
+.location {
+  width: 300px;
+  height: 350px;
+  border-radius: 24px;
+  padding: 16px;
+  border: 4px solid rgba(0, 128, 0, 0.671);
+  box-shadow: 5px 6px rgba(128, 128, 128, 0.178);
+}
+
+.location img {
+  height: 225px;
+  width: 100%;
+  padding-bottom: 18px;
+  margin-inline: auto;
+  border-radius: 6px;
+}
+
+h3.location {
+  height: 82px;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+}
+
+h2.location-title {
+  font-family: web-font;
+  font-size: 48px;
+}
+
+p.location {
+}
