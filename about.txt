@@ -1,0 +1,2 @@
+logo/asset: https://mamasvg.com/product/rick-and-morty-svg-free/
+api: https://rickandmortyapi.com/

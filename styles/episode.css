@@ -1,4 +1,4 @@
-#Location-container {
+#episode-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -6,7 +6,7 @@
   padding-bottom: 20px;
 }
 
-.location {
+.episode {
   width: 350px;
   height: 350px;
   border-radius: 24px;
@@ -15,7 +15,7 @@
   box-shadow: 5px 6px rgba(128, 128, 128, 0.178);
 }
 
-.location img {
+.episode img {
   height: 225px;
   width: 100%;
   padding-bottom: 18px;
@@ -23,14 +23,14 @@
   border-radius: 6px;
 }
 
-h3.location {
+h3.episode {
   height: 82px;
   text-align: center;
   margin: auto;
   padding: 30px;
 }
 
-h2.location-title {
+h2.episodes-title {
   font-family: web-font;
   font-size: 56px;
 }

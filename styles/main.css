@@ -1,6 +1,7 @@
 @import "characters.css";
 @import "location.css";
-@import "episodes.css";
+@import "episode.css";
+@import "navbar.css";
 
 * {
   box-sizing: border-box;
@@ -22,6 +23,7 @@ h1 {
   font-weight: 600;
   font-family: web-font;
   padding: 24px;
+  width: fit-content;
 }
 
 h2 {
@@ -33,37 +35,4 @@ h3 {
 }
 
 section {
-}
-
-#Characters-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
-  padding-bottom: 20px;
-}
-
-.character {
-  width: 300px;
-  height: 600px;
-  /* overflow: hidden; */
-  /* text-align: center; */
-  border-radius: 24px;
-  padding: 16px;
-  border: 4px solid rgba(0, 128, 0, 0.671);
-  box-shadow: 5px 6px rgba(128, 128, 128, 0.178);
-}
-
-.character img {
-  height: 225px;
-  width: 100%;
-  padding-bottom: 18px;
-  margin-inline: auto;
-  border-radius: 6px;
-}
-
-.character h3 {
-  height: 82px;
-  text-align: center;
-  margin: auto;
 }

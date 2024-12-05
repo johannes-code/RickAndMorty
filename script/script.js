@@ -63,7 +63,7 @@ async function getEpisode() {
 const response = await fetch('https://rickandmortyapi.com/api/episode/');
 const data = await response.json();
 const episode = data.results;
-const container = document.getElementById('Episode-container');
+const container = document.getElementById('episode-container');
 
 episode.forEach(async (episode) => {
     const episodeDiv = document.createElement('div');
